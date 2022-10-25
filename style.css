@@ -211,6 +211,7 @@ button.selected {
 
 @media screen and (max-width: 1000px) {
   button.bigwhitebutton, button.whitebutton, button.yellowbutton, button.purplebutton{
-    font-size: 10px;
+    font-size: 15px;
+    width: auto;
   }
 }
