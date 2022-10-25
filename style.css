@@ -18,26 +18,34 @@
   font-weight: bold;
 }
 
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
+* {
+  box-sizing: border-box;
+}
+.divrow {
+  display: flex;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.divcolumn {
+  flex: 50%;
+}
+/* Container for flexboxes */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+/* Create four equal columns */
+.column {
+  flex: 25%;
+  padding: 20px;
+  background-color:rgb(249,243,231);
 }
 
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: auto;
 }
 
 .centered {
@@ -73,7 +81,7 @@ button.selected {
   line-height: 20px;
   list-style: none;
   margin: 10px;
-  width: 35%;
+  width: 40%;
   outline: none;
   padding: 10px 16px;
   position: relative;
@@ -139,7 +147,7 @@ button.selected {
   line-height: 20px;
   list-style: none;
   margin: 10px;
-  width: 25%;
+  width: 30.5%;
   outline: none;
   padding: 10px 16px;
   position: relative;
@@ -172,7 +180,7 @@ button.selected {
   line-height: 20px;
   list-style: none;
   margin: 10px;
-  width: 70%;
+  width: 63%;
   outline: none;
   padding: 10px 16px;
   position: relative;
@@ -188,4 +196,15 @@ button.selected {
 .bigwhitebutton:hover,
 .bigwhitebutton:focus {
   background-color: #73746d;
+}
+@media screen and (min-width: 1001px) {
+  button.bigwhitebutton, button.whitebutton, button.yellowbutton, button.purplebutton{
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  button.bigwhitebutton, button.whitebutton, button.yellowbutton, button.purplebutton{
+    font-size: 10px;
+  }
 }
