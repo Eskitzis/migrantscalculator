@@ -5,32 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.6.0.min.js"></script>
     <title>Estimate Cost Calculator</title>
+
 </head>
+
 <body>
-    <!---Start Buttons-->
+<!--------------------------------Start Buttons-------------------------------------------------->
 
 
     <div class="row">
       <div class="column" style="background-color:#aaa;">
-        <h1>Moving Type</h1>
-          <button class="yellowbutton" role="button">Family Relocation</button>
-          <button class="purplebutton" role="button">Individual Relocation</button>
+        <h1 class="h1class">Estimate Cost Calculator</h1>
+        <h3 class="h3class">Moving Type</h3>
+          <button class="yellowbutton" value="10.00" >Family Relocation</button>
+          <button class="purplebutton" value="10.00" >Individual Relocation</button>
+
   
-        <h1>Current Location</h1>
-          <button class="yellowbutton" role="button">EU Citizens</button>
-          <button class="purplebutton" role="button">Non Eu Citizens</button>
+        <h3 class="h3class">Current Location</h3>
+          <button class="yellowbutton" value="10.00" >EU Citizens</button>
+          <button class="purplebutton" value="10.00" >Non Eu Citizens</button>
+
   
-        <h1>Your Personal Options</h1>
-          <button class="whitebutton" role="button">Immigration</button>
-          <button class="whitebutton" role="button">Transportation & Packing</button>
-          <button class="whitebutton" role="button">Setting In</button>
+        <h3 class="h3class">Your Personal Options</h3>
+          <button class="whitebutton" value="10.00" >Immigration</button>
+          <button class="whitebutton" value="10.00" >Transportation & Packing</button>
+          <button class="whitebutton" value="10.00" >Setting In</button>
+          <button class="bigwhitebutton" value="10.00" >Insurance Health Banks</button>
+          <button class="whitebutton" value="10.00" >Live Work Study</button>
+
   
-          <button class="bigwhitebutton" role="button">Insurance Health Banks</button>
-          <button class="whitebutton" role="button">Live Work Study</button>
-  
-          <button class="whitebutton" role="button">Becoming a Local</button>
-          <button class="bigwhitebutton" role="button">Buddy Up!</button> 
+          <button class="whitebutton" value="10.00" >Becoming a Local</button>
+          <button class="bigwhitebutton" value="10.00" >Buddy Up!</button> 
+
 
       </div>
 
@@ -38,22 +45,50 @@
         <div class="container">
          <img src="monitor.png" class="center">
          <div class="centered">
-            <h1>5.000 Euros</h1>
+            <h3 class="h3class2">Estimated Cost</h1>
+            <span class="h1class2 quote-price">0.00 €</span> 
+                <button class="reset">Reset</button>    
          </div>
         </div>
       </div>
 
     </div>
 
+<!--
+  <select>
+    <option value="0.00">0.00</option>
+    <option value="5.50">5.50</option>
+    <option value="15.75">15.75</option>
+    <option value="25.99">25.99</option>
+</select>
+-->
 
 
 
 
+<!------------------------------End Start Buttons------------------------------------------------>
+  <script>
+function updateTotal() {
+    var total = 0;
+    $('button.selected').each(function() {
+        total += parseFloat($(this).val());
+    });
+    /*total += parseFloat($('select').val());*/
+    $('span.quote-price').text(total.toFixed(2) + "€");
+}
 
-    <!---End Start Buttons-->
-    <script>
+$('button').click(function() {
+    $(this).toggleClass('selected');
+    updateTotal();
+});
+/*$('select').change(updateTotal);*/
 
+$('.reset').click(function() {
+    $('.selected').removeClass('selected');
+    /*$('select').val('0.00');*/
+    updateTotal();
+});
 
-    </script> 
+  </script> 
 </body>
 </html>
