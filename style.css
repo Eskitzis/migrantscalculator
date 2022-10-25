@@ -39,6 +39,12 @@
   flex: 25%;
   padding: 20px;
   background-color:rgb(249,243,231);
+  width: auto;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
 }
 
 .center {
